@@ -1,0 +1,17 @@
+{
+  "inbox": [
+    {
+      "recEmail": "sabari@gmail.com",
+      "subMessage": "This is a subject",
+      "totalMessage": "This is a message"
+    }
+  ],
+  "sent": [
+    {
+      "recEmail": "sabari@gmail.com",
+      "subMessage": "Hi Sabari",
+      "totalMessage": "Hello"
+    }
+  ],
+  "trash": []
+}

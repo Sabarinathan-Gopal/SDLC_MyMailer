@@ -7,19 +7,19 @@ const path = require("path");
 var express = require("express");
 var app = express();
 app.use(bodyParser.json());
-let rawdata = fs.readFileSync("./signup.json");
+let rawdata = fs.readFileSync("./src/signup.json");
 let userData = JSON.parse(rawdata);
 app.post("/signup", (req, res) => {
   userData[req.body.email] = req.body.password;
   var mailData = JSON.stringify(userData);
-  fs.writeFile("./signup.json", mailData, () => {});
+  fs.writeFile("./src/signup.json", mailData, () => {});
   var inboxAndSentbox = {
     inbox: [],
     sent: [],
     trash: [],
   };
   inboxAndSentbox = JSON.stringify(inboxAndSentbox);
-  fs.writeFile(`./users/${req.body.email}.json`, inboxAndSentbox, () => {});
+  fs.writeFile(`./src/users/${req.body.email}.json`, inboxAndSentbox, () => {});
   res.status(200).json({
     data: "success",
   });
@@ -47,7 +47,7 @@ app.post("/login", (req, res) => {
 app.post("/dashboard", function (req, res) {
   var x = 0;
   var y = 0;
-  const directory = fs.opendirSync("./users");
+  const directory = fs.opendirSync("./src/users");
   while ((file = directory.readSync()) != null) {
     var recepientjson = req.body.recEmail + ".json";
     var senderjson = req.body.sendEmail + ".json";
@@ -65,7 +65,7 @@ app.post("/dashboard", function (req, res) {
         totalMessage: req.body.totalMessage,
       };
       fs.readFile(
-        `./users/${recepientjson}`,
+        `./src/users/${recepientjson}`,
         "utf8",
         function callBack(err, data) {
           if (err) {
@@ -77,7 +77,7 @@ app.post("/dashboard", function (req, res) {
             obj.inbox.push(value0);
             obj.sent.push(value01);
             var inboxEntry = JSON.stringify(obj, null, 2);
-            fs.writeFile(`./users/${recepientjson}`, inboxEntry, (err) => {
+            fs.writeFile(`./src/users/${recepientjson}`, inboxEntry, (err) => {
               if (err) {
                 x = 3;
                 console.log(err);
@@ -92,8 +92,8 @@ app.post("/dashboard", function (req, res) {
       );
     } else {
       if (
-        fs.existsSync(`./users/${recepientjson}`) &&
-        fs.existsSync(`./users/${senderjson}`)
+        fs.existsSync(`./src/users/${recepientjson}`) &&
+        fs.existsSync(`./src/users/${senderjson}`)
       ) {
         console.log("3+");
         var value1 = {
@@ -102,7 +102,7 @@ app.post("/dashboard", function (req, res) {
           totalMessage: req.body.totalMessage,
         };
         fs.readFile(
-          `./users/${recepientjson}`,
+          `./src/users/${recepientjson}`,
           "utf8",
           function callBack(err, data) {
             if (err) {
@@ -113,7 +113,7 @@ app.post("/dashboard", function (req, res) {
               var object = JSON.parse(data);
               object.inbox.push(value1);
               var inboxEntry = JSON.stringify(object, null, 2);
-              fs.writeFile(`./users/${recepientjson}`, inboxEntry, (err) => {
+              fs.writeFile(`./src/users/${recepientjson}`, inboxEntry, (err) => {
                 if (err) {
                   x = 3;
                   console.log(err);
@@ -133,7 +133,7 @@ app.post("/dashboard", function (req, res) {
           totalMessage: req.body.totalMessage,
         };
         fs.readFile(
-          `./users/${senderjson}`,
+          `./src/users/${senderjson}`,
           "utf8",
           function callBack(err, data) {
             if (err) {
@@ -145,7 +145,7 @@ app.post("/dashboard", function (req, res) {
               object1.sent.push(value2);
               var sentEntry = JSON.stringify(object1, null, 2);
               fs.writeFile(
-                `./users/${senderjson}`,
+                `./src/users/${senderjson}`,
                 sentEntry,
                 "utf8",
                 (err) => {
@@ -190,7 +190,7 @@ app.post("/trash", (req, res) => {
       var currentUserJson = req.body.currentEmail + ".json";
       if (file.name == currentUserJson) {
         fs.readFile(
-          `./users/${currentUserJson}`,
+          `./src/users/${currentUserJson}`,
           "utf8",
           function callBack(err, data) {
             if (err) {
@@ -200,7 +200,7 @@ app.post("/trash", (req, res) => {
               obj.trash.splice(req.body.currentId, 1);
               var trashEntry = JSON.stringify(obj);
               fs.writeFile(
-                `./users/${currentUserJson}`,
+                `./src/users/${currentUserJson}`,
                 trashEntry,
                 "utf8",
                 (err) => {
@@ -223,7 +223,7 @@ app.post("/trash", (req, res) => {
         totalMessage: req.body.totalMessage,
       };
       fs.readFile(
-        `./users/${currentUserJson}`,
+        `./src/users/${currentUserJson}`,
         "utf8",
         function callBack(err, data) {
           if (err) {
@@ -238,7 +238,7 @@ app.post("/trash", (req, res) => {
             }
             var trashEntry = JSON.stringify(obj);
             fs.writeFile(
-              `./users/${currentUserJson}`,
+              `./src/users/${currentUserJson}`,
               trashEntry,
               "utf8",
               (err) => {
@@ -265,7 +265,7 @@ app.get("/", (req, res) => {
   var userEmail = req.query.email;
   if (userEmail) {
     var senderjson = userEmail + ".json";
-    fs.readFile(`./users/${senderjson}`, "utf8", function callBack(err, data) {
+    fs.readFile(`./src/users/${senderjson}`, "utf8", function callBack(err, data) {
       if (err) {
         console.log(err);
       } else {
@@ -283,8 +283,8 @@ app.get("/", (req, res) => {
       }
     });
   } else if (req.url.endsWith("/")) {
-    app.use(express.static("./"));
-    res.sendFile(path.join(__dirname, "./views/login.html"));
+    app.use(express.static("./src"));
+    res.sendFile(path.join(__dirname, "./src/views/login.html"));
   } else {
     res.status(404).json({
       Error: "Not a Valid EndPoint.Please check API Doc",

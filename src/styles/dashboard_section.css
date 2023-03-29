@@ -352,6 +352,15 @@ body {
 }
 .message-area-display{
     text-overflow: clip;
+    color:#ffffff
+}
+.message-area-subject{
+  text-overflow: clip;
+  color:#c0c0c0
+}
+.message-area-content{
+  text-overflow: clip;
+  color:#2c2c2c
 }
 .message-content{
       background-color: white;

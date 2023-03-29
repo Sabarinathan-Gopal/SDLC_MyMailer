@@ -1,1 +1,11 @@
-{ "inbox": [], "sent": [], "trash": [] }
+{
+  "inbox": [],
+  "sent": [
+    {
+      "recEmail": "arvi@gmail.com",
+      "subMessage": "",
+      "totalMessage": ""
+    }
+  ],
+  "trash": []
+}

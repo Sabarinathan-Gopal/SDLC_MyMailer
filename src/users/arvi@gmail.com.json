@@ -1,21 +1,11 @@
 {
-  "inbox": [],
-  "sent": [],
-  "trash": [
-    {
-      "recEmail": "arvi@gmail.com",
-      "subMessage": "this is another message...",
-      "totalMessage": "I am fine da..."
-    },
+  "inbox": [
     {
       "recEmail": "sabari@gmail.com",
-      "subMessage": "this is a subject...",
-      "totalMessage": "Hi sabari how..."
-    },
-    {
-      "recEmail": "arvi@gmail.com",
-      "subMessage": "this is another message...",
-      "totalMessage": "I am fine da..."
+      "subMessage": "",
+      "totalMessage": ""
     }
-  ]
+  ],
+  "sent": [],
+  "trash": []
 }

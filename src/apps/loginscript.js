@@ -93,8 +93,8 @@ const composeMessage = async (e) => {
   var messageElement = {
     recEmail: recepientEmail.value,
     sendEmail: userEmail,
-    subtMessage: messageSubject.value + "\n",
-    totalMessage: messageEntry.value + "\n",
+    subtMessage: messageSubject.value,
+    totalMessage: messageEntry.value,
   };
   await getEmailData(messageElement, composeMessageForm);
   displayCount();
@@ -191,7 +191,7 @@ function cardUpdateValues(clone, userMessage, indexDisplay) {
     "message-area-subject" + indexDisplay;
   const subjectStr = userMessage[indexDisplay].subMessage;
   clone.querySelector("#message-area-subject" + indexDisplay).innerText =
-    subjectStr.split("\n")[0] + "...";
+    subjectStr;
   clone.querySelector("#message-area-sender").id =
     "message-area-sender" + indexDisplay;
   clone.querySelector("#message-area-sender" + indexDisplay).innerText =
@@ -200,7 +200,7 @@ function cardUpdateValues(clone, userMessage, indexDisplay) {
     "message-area-content" + indexDisplay;
   const messageStr = userMessage[indexDisplay].totalMessage;
   clone.querySelector("#message-area-content" + indexDisplay).innerText =
-    messageStr.split("\n")[0] + "...";
+    messageStr;
 }
 
 /**
