@@ -1,0 +1,460 @@
+@import url("./total_section.css");
+* {
+        margin: 0;
+        padding: 0;
+  }
+html,
+body {
+        display: flex;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        height: 100%;
+        width: 100%;
+  }  
+  @media screen and (max-width:1313px) {
+    div.dashboard-logo{
+      height:200px;
+      width:200px;
+    }
+    span.title-bar{
+      font-size:27px;
+    }
+    button.logout-button{
+      width:100px;
+      font-size:18px;
+    }
+    div.default-display{
+      font-size:18px;
+    }
+    div.message-area{
+      font-size:18px;
+      padding:8px;
+    }
+    div.recepient-content{
+      font-size:18px;
+    }
+    div.subject-content{
+      font-size:18px;
+    }
+    div.message-content{
+      font-size:18px;
+    }
+    div.no-message-view{
+      font-size:18px;
+    }
+    }
+  @media screen and (max-width:970px) {
+    div.dashboard-logo{
+      height:175px;
+    width:175px;
+    }
+    span.title-bar{
+      font-size:24px;
+    }
+    button.logout-button{
+      width:90px;
+      font-size:17px;
+    }
+    div.default-display{
+      font-size:16px;
+    }
+    div.message-area{
+        font-size:16px;
+        padding:6px;
+    }
+    div.recepient-content{
+      font-size:16px;
+    }
+    div.subject-content{
+      font-size:16px;
+    }
+    div.message-content{
+      font-size:16px;
+    }
+    div.no-message-view{
+      font-size:16px;
+    }
+    }
+  @media screen and (max-width:765px) {
+    div.dashboard-logo{
+      height:125px;
+    width:125px;
+    }
+    span.title-bar{
+      font-size:21px;
+    }
+    button.logout-button{
+      width:80px;
+      font-size:15px;
+    }
+    div.default-display{
+      font-size:14px;
+    }
+    div.message-area{
+      font-size:14px;
+        padding:4px;
+    }
+    div.recepient-content{
+      font-size:14px;
+    }
+    div.subject-content{
+      font-size:14px;
+    }
+    div.message-content{
+      font-size:14px;
+    }
+    div.no-message-view{
+      font-size:14px;
+    }
+    }
+  .Title{
+    border-radius: 75px;
+    display: flex;
+    flex-direction: row;
+    font-family: 'Courier New', Courier, monospace;
+    height:12%;
+}
+.dashboard-page-box{
+      border-bottom-left-radius: 75px;
+      border-bottom-right-radius: 75px;
+      border-top-left-radius: 75px;
+      border-top-right-radius: 20px;
+      display: none;
+      flex-direction: column;
+      height:100%;
+      margin: auto;
+      outline: none;
+      width:100%;
+}
+.title-bar{
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    font-size:30px;
+    font-weight: 600;
+    height:100%;
+    justify-content: center;
+    width:80%;
+}
+.logout-div{
+    align-items: flex-end;
+    border-radius: 75px;
+    display: flex;
+    flex-direction: column;
+    height:70%;
+    width:20%;
+}
+.logout-button{
+     background: rgb(219, 42, 42);
+     border-radius: 75px;
+     border:none;
+     color: white;
+     cursor: pointer;
+     font-family: 'Courier New', Courier, monospace;
+     font-size: 20px;
+     font-weight: bold;
+     height: 100%;
+     width:125px;
+}
+.logout-button:hover{
+    background: white;
+    color: rgb(219, 42, 42);
+}
+.dashboard-content-box{
+      display: grid;
+      grid-template-columns:25% 25% 50%;
+      height:100%;
+}
+.message-div{
+    background: white;
+    border-radius: 10px;
+    display:flex;
+    flex-direction:column;
+    height:100%;
+    margin-left: 10px;
+    padding:5px;
+    overflow-y: auto;
+}
+.detail-div{
+      background: white;
+      border-radius: 10px;
+      height:100%;
+      margin-left: 10px;
+      padding:5px;
+}
+.message-display{
+      display:none;
+      flex-direction:column;
+      height:100%;
+}
+.default-display{
+    display:flex;
+    flex-direction:column;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height:100%;
+    justify-content: center;
+
+}
+.default-message-area{
+    display:flex;
+}
+.no-message-area{
+    display:none;
+}
+.message-area{
+    background: #15779E;
+    border-radius: 20px;
+    border: 2px solid black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bolder;
+    height:auto;
+    justify-content: center;
+    padding: 10px;
+}
+.compose-message-view{
+      display: none;
+      flex-direction: column;
+      height:100%;
+}
+.compose-message-form{
+      display: flex;
+      flex-direction: column;
+      height:100%;
+}
+.recepient-email{
+    height:10%;
+}
+.message-subject{
+      height:10%;
+}
+.message-entry{
+      display: flex;
+      height:65%;
+      padding-right: none;
+      padding:10px;
+      width:91%;
+}
+.compose-button-div{
+      height:10%;
+}
+.compose-button{
+      background: green;
+      border-radius: 75px;
+      border:none;
+      color: white;
+      cursor: pointer;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      font-weight: bold;
+      height:80%;
+      width:125px;
+}
+.compose-button:hover{
+    background: white;
+    color: green;
+}
+.message-button-div{
+    display: flex;
+    flex-direction: row;
+}
+.delete-button{
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height:20px;
+    width:30px;
+}
+.delete-button:hover{
+    background-color: white;
+    color: black;
+}
+.view-button{
+    background-color: black;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    height:20px;
+    width:30px;
+}
+.view-button:hover{
+    background-color: white;
+    color: black;
+}
+.normal-message-view{
+      display: none;
+      flex-direction: column;
+      height:100%;
+}
+.normal-message-div{
+      display: flex;
+      flex-direction: column;
+      height:100%;
+}
+.option-div{
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    width:100%;
+}
+.mail-options{
+    align-items: center;
+    display: grid;
+    grid-template-rows:32% 18% 18% 18% 18%;
+    height: 100%;
+    width: 100%;
+}
+.no-message-view{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height:100%;
+}
+.no-message-div{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height:100%;
+    justify-content: center;
+}
+.recepient-content{
+      background-color: white;
+      border-radius: 4px;
+      border: 1px solid black;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      font-weight: 300;
+      height:10%;
+      margin-bottom: 10px;
+      margin-top: 6px;
+      padding: 12px;
+      width: 80%;
+}
+.subject-content{
+      background-color: white;
+      border-radius: 4px;
+      border: 1px solid black;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      font-weight: 300;
+      height:10%;
+      margin-bottom: 10px;
+      margin-top: 6px;
+      padding: 12px;
+      width: 80%;
+}
+.message-area-display{
+    text-overflow: clip;
+}
+.message-content{
+      background-color: white;
+      border-radius: 4px;
+      border: 1px solid black;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      font-weight: 300;
+      height:80%;
+      margin-bottom: 10px;
+      margin-top: 6px;
+      overflow-wrap: break-word;
+      padding: 12px;
+      width: 80%;
+}
+.batch{
+    background: black;
+    border-radius: 50%;
+    color: white;
+    padding: 5px 10px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+}
+.logo-div{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height:100%;
+  width: 100%;
+}
+.dashboard-logo{
+  height:250px;
+  width:250px;
+  background: url("../assets/Mailer.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.compose-message-button{
+    background-color: #555;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height:100%;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+}
+.compose-message-button:hover{
+    background-color: #494343;
+}
+.inbox-message-button{
+    background-color: #555;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height:100%;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+}
+.inbox-message-button:hover{
+    background-color: #494343;
+}
+.sentbox-message-button{
+    background-color: #555;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height:100%;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+}
+.sentbox-message-button:hover{
+    background-color: #494343;
+}
+.trash-message-button{
+    background-color: #555;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    height:100%;
+    padding: 15px 20px;
+    position: relative;
+    text-decoration: none;
+    width: 100%;
+}
+.trash-message-button:hover{
+    background-color: #494343;
+}

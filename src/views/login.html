@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/total_section.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="login-page-title">
+      <div class="login-title-bar">
+        <p class="login-title">MY MAILER</p>
+      </div>
+    </div>
+    <div class="total-box">
+      <div id="content-box" class="content-box">
+        <div id="login-box" class="login-box">
+          <div id="login-container-title" class="login-container-title">
+            <p>Login</p>
+          </div>
+          <div id="login-validation-message" class="login-validation-message">
+            <p
+              id="login-validation-message-style"
+              class="login-validation-message-style"
+            ></p>
+          </div>
+          <div class="login-container" id="login-container">
+            <form id="login-form" class="login-form">
+              <label class="text-field" for="username">Email-Id</label>
+              <input
+                class="input-field"
+                type="email"
+                id="usrname"
+                name="username"
+                required
+              />
+              <label class="text-field" for="psw">Password</label>
+              <input
+                class="input-field"
+                type="password"
+                id="psw"
+                name="psw"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required
+              />
+              <br />
+              <div class="login-button-div">
+                <button
+                  class="button"
+                  type="button"
+                  value="submit"
+                  id="dashboard-button"
+                >
+                  Submit
+                </button>
+                <br />
+              </div>
+            </form>
+          </div>
+          <div id="login-button-box" class="login-button-box">
+            <button
+              class="login-button"
+              type="button"
+              id="login-button"
+              value="submit"
+            >
+              LOGIN
+            </button>
+          </div>
+        </div>
+        <div class="logo-image">
+          <div class="login-logo-div">
+            <div id="login-logo" class="login-logo"></div>
+          </div>
+        </div>
+        <div id="signup-box" class="signup-box">
+          <div id="validation-message" class="validation-message">
+            <p
+              id="validation-message-style"
+              class="validation-message-style"
+            ></p>
+          </div>
+          <div id="signup-button-box" class="signup-button-box">
+            <button
+              class="signup-button"
+              type="button"
+              id="signup-button"
+              value="submit"
+            >
+              SIGNUP
+            </button>
+          </div>
+          <div id="signup-content-box" class="signup-content-box">
+            <form id="signup-form" class="signup-form">
+              <label class="signup-field" for="signup-email">Email-Id</label>
+              <input
+                class="input-field"
+                type="email"
+                id="signup-email"
+                name="signup-email"
+                required
+              />
+              <label class="signup-field" for="signup-usrname">Username</label>
+              <input
+                class="input-field"
+                type="text"
+                id="signup-usrname"
+                name="signup-usrname"
+                required
+              />
+              <label class="signup-field" for="signup-mobile">Mobile</label>
+              <input
+                class="input-field"
+                type="tel"
+                id="signup-mobile"
+                name="signup-mobile"
+                required
+              />
+              <label class="signup-field" for="signup-psw">Password</label>
+              <input
+                class="input-field"
+                type="password"
+                id="signup-psw"
+                name="signup-psw"
+                pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+                title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+                required
+              />
+              <br />
+              <br />
+              <div class="login-button-div">
+                <button
+                  class="button"
+                  id="signup-complete-button"
+                  type="button"
+                  value="submit"
+                >
+                  Save
+                </button>
+              </div>
+            </form>
+            <div class="signup-message" id="signup-message">
+              <h3>Password must contain the following:</h3>
+              <p id="signup-letter" class="signup-invalid">
+                A <b>lowercase</b> letter
+              </p>
+              <p id="signup-capital" class="signup-invalid">
+                A <b>capital (uppercase)</b> letter
+              </p>
+              <p id="signup-number" class="signup-invalid">A <b>number</b></p>
+              <p id="signup-length" class="signup-invalid">
+                Minimum <b>8 characters</b>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="dashboard-page-box" class="dashboard-page-box">
+        <div class="Title">
+          <div class="title-bar">
+            <span id="title-bar" class="title-bar">User is</span>
+          </div>
+          <div class="logout-div">
+            <button id="logout-button" class="logout-button">Logout</button>
+          </div>
+        </div>
+        <div class="dashboard-content-box">
+          <div id="option-div" class="option-div">
+            <div class="mail-options">
+              <div class="logo-div">
+                <div id="dashboard-logo" class="dashboard-logo"></div>
+              </div>
+              <div>
+                <button
+                  id="compose-message-button"
+                  class="compose-message-button"
+                >
+                  compose
+                </button>
+              </div>
+              <div>
+                <button id="inbox-message-button" class="inbox-message-button">
+                  inbox
+                  <span id="inbox-batch" class="batch">0</span>
+                </button>
+              </div>
+              <div>
+                <button
+                  id="sentbox-message-button"
+                  class="sentbox-message-button"
+                >
+                  sentbox
+                  <span id="sentbox-batch" class="batch">0</span>
+                </button>
+              </div>
+              <div>
+                <button id="trash-message-button" class="trash-message-button">
+                  trash
+                  <span id="trashbox-batch" class="batch">0</span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div id="message-div" class="message-div">
+            <div class="message-display" id="message-display">
+              <div id="message-area" class="message-area">
+                <div class="message-button-div">
+                  <button
+                    id="delete-button"
+                    class="delete-button"
+                    onclick="toTrashBox(id)"
+                  >
+                    <i class="fa fa-trash"></i>
+                  </button>
+                  &nbsp;
+                  <button
+                    id="view-button"
+                    class="view-button"
+                    onclick="toViewBox(id)"
+                  >
+                    <i class="fa fa-eye"></i>
+                  </button>
+                </div>
+                <div
+                  id="message-area-sender"
+                  class="message-area-display"
+                ></div>
+                <div
+                  id="message-area-subject"
+                  class="message-area-display"
+                ></div>
+
+                <div
+                  id="message-area-content"
+                  class="message-area-display"
+                ></div>
+              </div>
+            </div>
+            <div class="default-display" id="default-display">
+              <div class="default-message-area" id="default-message-area">
+                <h3>Select any option to view messages</h3>
+              </div>
+              <div class="no-message-area" id="no-message-area">
+                <h3>No messages found</h3>
+              </div>
+            </div>
+          </div>
+          <div id="detail-div" class="detail-div">
+            <div id="compose-message-view" class="compose-message-view">
+              <form id="compose-message-form" class="compose-message-form">
+                <input
+                  type="email"
+                  class="recepient-email"
+                  id="recepient-email"
+                  name="recepient-email"
+                  placeholder="recepient email"
+                  required
+                />
+                <input
+                  type="text"
+                  class="message-subject"
+                  id="message-subject"
+                  name="message-subject"
+                  placeholder="Subject"
+                  required
+                />
+                <textarea
+                  class="message-entry"
+                  id="message-entry"
+                  name="message-entry"
+                  placeholder="Please compose your message here"
+                  form="compose-message-form"
+                ></textarea>
+                <br>
+                <div class="compose-button-div">
+                  <button
+                    class="compose-button"
+                    id="compose-button"
+                    type="button"
+                    value="submit"
+                  >
+                    Send
+                  </button>
+                </div>
+              </form>
+            </div>
+            <div id="normal-message-view" class="normal-message-view">
+              <div id="normal-message-div" class="normal-message-div">
+                <span
+                  isreadonly="true"
+                  id="recepient-content"
+                  class="recepient-content"
+                ></span>
+                <span
+                  isreadonly="true"
+                  id="subject-content"
+                  class="subject-content"
+                ></span>
+                <span
+                  isreadonly="true"
+                  id="message-content"
+                  class="message-content"
+                ></span>
+              </div>
+            </div>
+            <div id="no-message-view" class="no-message-view">
+              <div id="no-message-div" class="no-message-div">
+                <h3>Select any message to read</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="../apps/emaildata.js"></script>
+    <script src="../apps/loginscript.js"></script>
+  </body>
+</html>
