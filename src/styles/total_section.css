@@ -1,0 +1,17 @@
+@import url("./top_section.css");
+@import url("./dashboard_section.css");
+*{
+    margin:0;
+    padding:0;
+  }
+html,body{
+  background-color: white;
+  height: 100%;
+  width: 100%;
+}
+.header{
+      color: #FeFeFe;
+  }
+.Title{
+      font-size: 15px;;
+  }

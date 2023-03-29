@@ -1,0 +1,346 @@
+@import url("./total_section.css");
+* {
+      margin: 0;
+      padding: 0;
+  }
+html,
+body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      background-image: url("../assets/Mymailer-wallpaper.jpg");
+  }
+
+@media screen and (max-width:1313px) {
+  div.login-logo{
+    height:150px;
+  width:150px;
+  }
+  }
+@media screen and (max-width:970px) {
+  div.login-logo{
+    height:125px;
+  width:125px;
+  }
+  }
+@media screen and (max-width:765px) {
+  div.login-logo{
+    height:100px;
+  width:100px;
+  }
+  }
+
+  .input-field{
+    background: white;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom:1px solid black;
+    outline: none;
+    cursor: pointer;
+  }
+.login-page-title{
+  font-size:50px;
+  min-height:10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  margin-top:20px;
+  cursor: context-menu;
+}
+.login-title-bar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 30px;
+  font-size: 30px;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  width:220px;
+  height:40px;
+  border: 2px solid black;
+  font-family:cursive;
+}
+.total-box{
+  height: 80%;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  border-radius: 75px;
+  margin-top:15px;
+}
+.content-box{
+  height:100%;
+  display: grid;
+  grid-template-columns: 40% 20% 40%;
+  align-items: center;
+  border-radius: 75px;
+}
+.login-box{
+  background: white;
+  opacity: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100%;
+border-left: none;
+border: 5px solid black;
+border-top-right-radius: 20px;
+border-bottom-right-radius: 20px;
+}
+
+input {
+  width: 90%;
+  padding: 12px;
+  padding-bottom: 5px;
+  margin-top: 6px;
+  margin-bottom: 10px;
+}
+.forgot-password{
+  margin-bottom: 20px;
+  width:120px;
+  background-color: #121212;
+  color: white;
+}
+.login-logo-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:100%;
+  width: 100%;
+  }
+  .login-logo{
+  height:200px;
+  width:200px;
+  background: url("../assets/Mailer.svg");
+  background-size:contain;
+  background-repeat: no-repeat;
+  }
+.button{
+    height:35px;
+    width:150px;
+    font-size:16px;
+    border:none;
+    outline:none;
+    background-color: #04AA6D;
+    color: white;
+    cursor:pointer;
+    font-family: 'Courier New', Courier, monospace;
+}
+.button:hover{
+  background-color: #068858;
+}
+.login-button-div{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.login-button{
+  width:150px;
+  height: 70px;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.login-button:hover{
+  opacity:1;
+}
+.login-validation-message{
+  display: flex;
+  height: auto;
+  flex-direction: column;
+  align-items: top;
+}
+.login-validation-message-style{
+  font-family: 'Courier New', Courier, monospace;
+  color: red;
+  font-weight: 900;
+}
+.login-button-box{
+  display:none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+/* Style the container for inputs */
+.login-container {
+  background-color: white;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  align-items: center;
+  justify-content: center;
+}
+.login-form{
+  display: flex;
+  flex-direction: column;
+  width:70%;
+}
+.text-field{
+  height:40px;
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+.signup-field{
+  padding-left: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Courier New', Courier, monospace;
+
+}
+.login-container-title{
+  height:20%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 40px;
+  font-family: 'Courier New', Courier, monospace;
+}
+/* The message box is shown when the user clicks on the password field */
+.message {
+  display:none;
+  background: #f1f1f1;
+  color: #000;
+  position: relative;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.message p {
+  padding: 0 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
+.signup-box{
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+height: 100%;
+border-bottom: none;
+border-right: none;
+border: 5px solid black;
+border-top-left-radius: 20px;
+border-bottom-left-radius: 20px;
+background: none;
+}
+.signup-button{
+  width:150px;
+  height: 70px;
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-weight: bolder;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.6;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.signup-button:hover{
+  opacity:1;
+}
+.validation-message{
+  display: none;
+  height: 50px;
+  flex-direction: column;
+  align-items: top;
+}
+.validation-message-style{
+  font-family: 'Courier New', Courier, monospace;
+  color: red;
+  font-weight: 900;
+}
+.signup-button-box{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.signup-content-box{
+  display: none;
+  height: auto;
+  width:70%;
+}
+/* The message box is shown when the user clicks on the password field */
+.signup-message {
+  display:none;
+  color: #000;
+  position: relative;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+.signup-message p {
+  padding: 0 35px;
+  font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.signup-valid {
+  color: green;
+}
+
+.signup-valid:before {
+  position: relative;
+  left: -35px;
+  content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.signup-invalid {
+  color: red;
+}
+
+.signup-invalid:before {
+  position: relative;
+  left: -35px;
+  content: "✖";
+}
